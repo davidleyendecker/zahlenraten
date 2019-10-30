@@ -1,2 +1,14 @@
 # Project exclude paths
+*.class
+/target/
 /out/
+/logs/
+/classes/
+
+# Intellij project files
+.idea/
+.idea/*
+workspace.xml
+tasks.xml
+# ignore module files -> enable import from Maven instead!
+*.iml

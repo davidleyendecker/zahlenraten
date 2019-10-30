@@ -7,86 +7,86 @@ import static org.junit.jupiter.api.Assertions.*;
 class ZahlenratenLogikTest {
 
     @Test
-    public void correct() {
+    void correct() {
 
-        final ZahlenratenLogik zahlenratenLogik = new ZahlenratenLogik(createMockedProvider(), ZahlenratenLogik.Schwierigkeitsgrad.LEICHT);
+        final ZahlenratenLogik zahlenratenLogik = new ZahlenratenLogik(createMockedProvider(), Schwierigkeitsgrad.LEICHT);
 
         assertEquals(
-                ZahlenratenLogik.Ergebnis.ZU_KLEIN,
+                Ergebnis.ZU_KLEIN,
                 zahlenratenLogik.raten(5)
         );
 
         assertEquals(
-                ZahlenratenLogik.Ergebnis.ZU_GROSS,
+                Ergebnis.ZU_GROSS,
                 zahlenratenLogik.raten(55)
         );
 
         assertEquals(
-                ZahlenratenLogik.Ergebnis.RICHTIG,
+                Ergebnis.RICHTIG,
                 zahlenratenLogik.raten(50)
         );
 
     }
 
     @Test
-    public void correctWithLastTry() {
+    void correctWithLastTry() {
 
-        final ZahlenratenLogik zahlenratenLogik = new ZahlenratenLogik(createMockedProvider(), ZahlenratenLogik.Schwierigkeitsgrad.LEICHT);
+        final ZahlenratenLogik zahlenratenLogik = new ZahlenratenLogik(createMockedProvider(), Schwierigkeitsgrad.LEICHT);
 
         assertEquals(
-                ZahlenratenLogik.Ergebnis.ZU_KLEIN,
+                Ergebnis.ZU_KLEIN,
                 zahlenratenLogik.raten(5)
         );
 
         assertEquals(
-                ZahlenratenLogik.Ergebnis.ZU_GROSS,
+                Ergebnis.ZU_GROSS,
                 zahlenratenLogik.raten(55)
         );
 
         assertEquals(
-                ZahlenratenLogik.Ergebnis.ZU_KLEIN,
+                Ergebnis.ZU_KLEIN,
                 zahlenratenLogik.raten(40)
         );
 
         assertEquals(
-                ZahlenratenLogik.Ergebnis.ZU_GROSS,
+                Ergebnis.ZU_GROSS,
                 zahlenratenLogik.raten(60)
         );
 
         assertEquals(
-                ZahlenratenLogik.Ergebnis.RICHTIG,
+                Ergebnis.RICHTIG,
                 zahlenratenLogik.raten(50)
         );
 
     }
 
     @Test
-    public void gameOver() {
+    void gameOver() {
 
-        final ZahlenratenLogik zahlenratenLogik = new ZahlenratenLogik(createMockedProvider(), ZahlenratenLogik.Schwierigkeitsgrad.LEICHT);
+        final ZahlenratenLogik zahlenratenLogik = new ZahlenratenLogik(createMockedProvider(), Schwierigkeitsgrad.LEICHT);
 
         assertEquals(
-                ZahlenratenLogik.Ergebnis.ZU_KLEIN,
+                Ergebnis.ZU_KLEIN,
                 zahlenratenLogik.raten(5)
         );
 
         assertEquals(
-                ZahlenratenLogik.Ergebnis.ZU_GROSS,
+                Ergebnis.ZU_GROSS,
                 zahlenratenLogik.raten(55)
         );
 
         assertEquals(
-                ZahlenratenLogik.Ergebnis.ZU_KLEIN,
+                Ergebnis.ZU_KLEIN,
                 zahlenratenLogik.raten(40)
         );
 
         assertEquals(
-                ZahlenratenLogik.Ergebnis.ZU_GROSS,
+                Ergebnis.ZU_GROSS,
                 zahlenratenLogik.raten(60)
         );
 
         assertEquals(
-                ZahlenratenLogik.Ergebnis.VERLOREN,
+                Ergebnis.VERLOREN,
                 zahlenratenLogik.raten(30)
         );
 
@@ -95,7 +95,7 @@ class ZahlenratenLogikTest {
     private ZufallszahlProvider createMockedProvider() {
         return new ZufallszahlProvider() {
             @Override
-            public int provideValue(ZahlenratenLogik.Schwierigkeitsgrad schwierigkeitsgrad) {
+            public int provideValue(Schwierigkeitsgrad schwierigkeitsgrad) {
                 return 50;
             }
         };

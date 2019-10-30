@@ -13,7 +13,7 @@ public class Zahlenraten {
 
             if (logik == null) {
                 System.out.println("Bitte wählen Sie einen Schwierigkeitsgrad");
-                for (ZahlenratenLogik.Schwierigkeitsgrad schwierigkeitsgrad : ZahlenratenLogik.Schwierigkeitsgrad.values()) {
+                for (Schwierigkeitsgrad schwierigkeitsgrad : Schwierigkeitsgrad.values()) {
                     System.out.println(schwierigkeitsgrad.getAnzeigetext());
                 }
 
@@ -21,7 +21,7 @@ public class Zahlenraten {
                 if(i == null) {
                     break;
                 }
-                ZahlenratenLogik.Schwierigkeitsgrad schwierigkeitsgrad = ZahlenratenLogik.Schwierigkeitsgrad.fromInteger(i);
+                Schwierigkeitsgrad schwierigkeitsgrad = Schwierigkeitsgrad.fromInteger(i);
                 logik = new ZahlenratenLogik(new DefaultZufallszahlProvider(), schwierigkeitsgrad);
             }
 
@@ -30,7 +30,7 @@ public class Zahlenraten {
             if(i == null) {
                 break;
             }
-            ZahlenratenLogik.Ergebnis ergebnis = logik.raten(i);
+            Ergebnis ergebnis = logik.raten(i);
             System.out.println(ergebnis.getMeldung());
 
             if (ergebnis.isAbbruch()) {
