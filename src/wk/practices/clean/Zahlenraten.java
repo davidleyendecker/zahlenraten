@@ -1,7 +1,6 @@
 package wk.practices.clean;
 
 import java.util.Scanner;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Zahlenraten {
     public static void main(String[] args) {
@@ -17,7 +16,7 @@ public class Zahlenraten {
                     System.out.println(schwierigkeitsgrad.getAnzeigetext());
                 }
 
-                Integer i = getZahlEingabe(scanner);
+                Integer i = verarbeiteEingabeVonBenutzer(scanner);
                 if(i == null) {
                     break;
                 }
@@ -26,7 +25,7 @@ public class Zahlenraten {
             }
 
             System.out.printf("Sie haben noch %d Versuche. Bitte geben Sie eine Zahl ein: ", logik.getAnzahlRestversuche());
-            Integer i = getZahlEingabe(scanner);
+            Integer i = verarbeiteEingabeVonBenutzer(scanner);
             if(i == null) {
                 break;
             }
@@ -45,7 +44,7 @@ public class Zahlenraten {
         }
     }
 
-    private static Integer getZahlEingabe(Scanner scanner) {
+    private static Integer verarbeiteEingabeVonBenutzer(Scanner scanner) {
         int i = 0;
         while (i == 0) {
             try {
